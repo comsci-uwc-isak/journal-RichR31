@@ -1,2 +1,63 @@
-In the 2nd last class we had, we learnt about recursion. In today's class we reviewed that topic by applying it to code. I think that I already learned the basic of recursion but one of the thing  I struggle the most doing is trying to picture in my head how could I actually apply that into a real program. Today's activity was one of those activites that allowed me to see for real the use of recursion.
-For future classes, I would like to have simmilar programming activities for queues and stack. That, again, are topics I understand but that i have no clue how they look like in an actual implementation.
+Today i created this program as a response to a question stated by the teacher:
+
+grades = [21, 33, 26, 39, 28, 32.5, 18.5, 27, 31.5, 29, 26.5, 31.5, 24, 35.5, 22.5, 25, 25.5, 19]
+
+sum = 0
+mean=0
+median=0
+q1=0
+q3=0
+iqr=0
+flag = True
+while flag:
+     flag = False
+     for x in range(0, len(grades)-1 ):
+         
+         if grades[x] > grades[x+1]:
+             tmp = grades[x]
+             grades[x] = grades[x+1]
+             grades[x+1]=tmp
+             flag= True
+print (grades)
+
+if len(grades)%2 == 0:
+    a=len(grades)//2
+    b= (a+1)
+    median=(grades[a-1]+grades[b-1])/2
+   
+else:
+    a= (len(grades)+1)/2
+    median=grades[a]
+
+print("median:",median)
+
+
+
+
+
+#mean
+for y in grades:
+    sum += grades[x]
+    
+mean= sum/len(grades)
+print("mean: ", mean)
+
+
+
+#1q
+c=(len(grades)+1)//4
+q1=grades[c]
+print("1q: ", q1 )
+
+#3q
+d=(3*(len(grades)+1))//4
+q3=grades[d]
+print("3q: ", q3)
+
+
+iqr= q3 - q1
+
+print("IQR: ",iqr)
+            
+
+Although it is working, I still have to implement OOP for which I didnt have time to do
